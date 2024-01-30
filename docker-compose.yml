@@ -1,0 +1,68 @@
+version: '3'
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:15
+    environment:
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo16@2024
+      POSTGRES_DB: postgres
+    restart: always 
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+
+  odoo16:
+    container_name: web
+    image: odoo:16
+    depends_on:
+      - postgres
+    ports:
+      - "10016:8069"
+      - "20016:8072" # live chat
+    tty: true
+    command: --
+    environment:
+      - HOST=postgres
+      - USER=odoo
+      - PASSWORD=odoo16@2024
+
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo16@2024
+      - POSTGRES_DB=postgres
+    volumes:
+      #- /etc/timezone:/etc/timezone:ro
+      #- /etc/localtime:/etc/localtime:ro
+      # - ./entrypoint.sh:/entrypoint.sh   # if you want to install additional Python packages, uncomment this line!
+      - ./odoo-addons:/mnt/extra-addons
+      - ./odoo-config:/etc/odoo
+      - ./odoo-data:/var/lib/odoo
+    restart: always             # run as a service
+    
+  frontend:
+    build:
+      context: ./frontend
+    container_name: nextapp
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+    command: npm start
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8888:80"
+    volumes:
+      - ./dist:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      # - react-app
+      - odoo16
+
+volumes:
+  odoo-addons:
+  odoo-config:
+  odoo-data:
+  postgres-data:

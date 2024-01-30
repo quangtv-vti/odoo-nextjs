@@ -1,0 +1,15 @@
+postgresql/
+etc/odoo-server.log
+etc/addons/
+etc/sessions/
+etc/filestore/
+
+postgres-data/
+odoo-config/odoo-server.log
+
+odoo-data/addons/
+odoo-data/sessions/
+odoo-data/filestore/
+
+frontend/package-lock.json
+frontend/node_modules

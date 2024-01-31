@@ -37,9 +37,10 @@ Then open `localhost:10016` to access Odoo 16.0.
 - **If you get any permission issues**, change the folder permission to make sure that the container is able to access the directory:
 
 ``` sh
-$ sudo chmod -R 777 addons
-$ sudo chmod -R 777 etc
-$ sudo chmod -R 777 postgresql
+sudo chmod -R 777 addons
+sudo chmod -R 777 etc
+sudo chmod -R 777 postgresql
+sudo chmod -R 777 odoo-data
 ```
 
 - If you want to start the server with a different port, change **10016** to another value in **docker-compose.yml** inside the parent dir:

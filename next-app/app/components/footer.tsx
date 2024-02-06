@@ -27,25 +27,25 @@ const Footer = () => {
       itemStyle: 'px-2 text-muted'
     },
     {
-      itemUrl: '#',
+      itemUrl: '/contactus',
       label: 'Abount',
       itemStyle: 'px-2 text-muted'
     },
   ]
   return (
     <>
+      <footer className="py-3 my-4">
       <Container>
-        <footer className="py-3 my-4">
-          <Nav className="justify-content-center border-bottom pb-3 mb-3">
-            {
-              footerItem.map( item => (
-                <NavItem><NavLink href={item.itemUrl} className={item.itemStyle}>{item.label}</NavLink></NavItem>
-              ))
-            } 
-          </Nav>
-          <p className="text-center text-muted">&copy; 2021 Company, Inc</p>
-        </footer>
-      </Container>
+        <Nav className="justify-content-center border-bottom pb-3 mb-3">
+          {
+            footerItem.map( (item, index) => (
+              <NavItem key={index.toString()}><NavLink href={item.itemUrl} className={item.itemStyle}>{item.label}</NavLink></NavItem>
+            ))
+          } 
+        </Nav>
+        <p className="text-center text-muted">&copy; 2024 ErpBlogs, Inc</p>
+        </Container>
+      </footer>
     </>
   );
 }

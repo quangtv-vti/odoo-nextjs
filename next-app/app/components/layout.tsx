@@ -1,8 +1,11 @@
-import Link from 'next/link';
+"use client"
+
 import Container  from 'react-bootstrap/Container';
 
 import Header from './header';
 import Footer from './footer';
+
+import styles from './styles/layout.module.scss'
 // import { Container } from 'postcss';
 
 
@@ -12,13 +15,11 @@ const Layout = ({
   children: React.ReactNode
 }) => {
   return (
-    <>
+    <div className={styles.layout}>
       <Header />
-      <Container>
-        <main>{children}</main>
-      </Container>
+      <main>{children}</main>
       <Footer />
-    </>
+    </div>
   );
 }
 

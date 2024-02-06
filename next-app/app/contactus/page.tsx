@@ -1,4 +1,4 @@
-const Contactus = () => {
+const ContactUs = () => {
     return (
         <main>
             Contact us <a href="tel:84972421977">+84972421977</a>
@@ -7,4 +7,4 @@ const Contactus = () => {
 }
 
 
-export default Contactus;
+export default ContactUs;

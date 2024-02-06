@@ -15,12 +15,10 @@ RUN \
   else echo "Warning: Lockfile not found. It is recommended to commit lockfiles to version control." && yarn install; \
   fi
 
-# COPY app ./app
-COPY src ./src
+COPY app ./app
+# COPY src ./src
 COPY public ./public
 COPY next.config.js .
-COPY postcss.config.js .
-COPY tailwind.config.ts .
 COPY tsconfig.json .
 COPY .eslintrc.json .
 # COPY . .

@@ -1,11 +1,11 @@
-import Menu from '../../components/Menu';
+import Layout from '../components/layout';
+
 
 const Home = () => {
     return (
-        <main>
-            <Menu />
+        <Layout>
             <h1>Welcome to the Home Page</h1>
-        </main>
+        </Layout>
     )
 }
 

@@ -1,24 +1,19 @@
 // components/Menu.js
 import Link from 'next/link';
+import Button from 'react-bootstrap/Button';
 
-const Menu = () => {
+const Navbar = () => {
   return (
     <>
-      {/* Include Bootstrap CSS from CDN */}
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" />
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" />
 
-
-      {/* Your menu content */}
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
           <Link href="/">
             <div className="navbar-brand">Home</div>
           </Link>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <Button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
-          </button>
+          </Button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
@@ -44,4 +39,4 @@ const Menu = () => {
   );
 }
 
-export default Menu;
+export default Navbar;

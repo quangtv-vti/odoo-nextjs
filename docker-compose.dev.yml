@@ -52,6 +52,7 @@ services:
     env_file:
       - .env
     volumes:
+      # - ./next-app:/app
       - ./next-app/src:/app/src
       - ./next-app/public:/app/public
     restart: always

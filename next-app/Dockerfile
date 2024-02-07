@@ -18,7 +18,7 @@ RUN \
 COPY app ./app
 # COPY src ./src
 COPY public ./public
-COPY next.config.js .
+COPY next.config.*js .
 COPY tsconfig.json .
 COPY .eslintrc.json .
 # COPY . .

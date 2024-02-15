@@ -25,9 +25,9 @@ services:
     tty: true
     command: --
     environment:
-      - HOST=postgres
-      - USER=odoo
-      - PASSWORD=odoo17@2024
+      # - HOST=localhost
+      # - USER=odoo
+      # - PASSWORD=odoo17@2024
 
       - POSTGRES_USER=odoo
       - POSTGRES_PASSWORD=odoo17@2024

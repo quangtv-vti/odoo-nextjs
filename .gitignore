@@ -10,6 +10,7 @@ odoo-config/odoo-server.log
 odoo-data/addons/
 odoo-data/sessions/
 odoo-data/filestore/
+odoo-addons/
 
 frontend/package-lock.json
 frontend/node_modules

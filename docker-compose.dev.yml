@@ -20,8 +20,8 @@ services:
     depends_on:
       - postgres
     ports:
-      - "10016:8069"
-      - "20016:8072" # live chat
+      - "18169:8069"
+      - "18172:8072" # live chat
     tty: true
     command: --
     environment:
@@ -75,7 +75,7 @@ services:
       - odoo17
     networks:
       - odoo-network
-    restart: always    
+    # restart: always    
 
 volumes:
   odoo-addons:

@@ -1,0 +1,26 @@
+services:    
+  odoo18-web:
+    container_name: odoo18-web
+    image: odoo:18.0
+    user: root
+    depends_on:
+      - postgres
+    ports:
+      - "10036:8069"
+      - "20036:8072" # live chat
+    tty: true
+    # command: odoo --config=/etc/odoo/odoo-server.conf 
+    environment:
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo18@2024
+      - POSTGRES_DB=postgres
+    volumes:
+      - ./odoo-addons/odoo-addons-customs/:/mnt/extra-addons
+      - ./odoo-addons/odoo-addons-3rd/:/mnt/3rd-addons
+      - ./odoo-addons/enterprise/:/mnt/enterprise
+      - ./odoo-config:/etc/odoo/
+      - ./odoo-data:/var/lib/odoo/
+      - ./odoo-logs:/var/log/odoo/
+    restart: always # run as a service
+    networks: 
+      - odoo-network        

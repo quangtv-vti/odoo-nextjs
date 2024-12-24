@@ -1,0 +1,15 @@
+services:    
+  postgres:
+    container_name: postgres
+    image: postgres:15
+    environment:
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo18@2024
+      POSTGRES_DB: postgres
+    restart: always 
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    networks:
+      - odoo-network
+    ports:
+      - "5433:5432"

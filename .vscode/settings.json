@@ -1,0 +1,12 @@
+{
+    "files.autoSave": "off",
+    "files.exclude": {
+        "**/bower_components/": true,
+        "**/node_modules/": true,
+        "**/tmp/": true,
+        "**/database/": true,
+        "**/backend/odoo-data/": true,
+        "**/backend/odoo-logs/": true,
+
+    }
+}

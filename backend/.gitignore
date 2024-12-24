@@ -1,0 +1,17 @@
+.idea
+
+odoo-data/*
+odoo-logs/*
+
+odoo-nginx/*
+!odoo-nginx/odoo-nginx.conf
+
+odoo-config/*
+!odoo-config/odoo-server.conf
+
+core/*
+odoo-addons-3rd/*
+odoo-addons-customs/*
+postgres-data/*
+
+odoo-addons-dev
